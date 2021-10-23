@@ -33,14 +33,14 @@ int main(int argc, char const *argv[]) {
     }
 
     if (total1 == total2) {
-      printf("\nNilai kartu mereka sama.\n");
+      printf("\nNilai kartu mereka sama,\n");
       printf("Ada rasa suka di antara mereka.\n");
     } else {
-      printf("\nNilai kartu mereka tidak sama.\n");
+      printf("\nNilai kartu mereka tidak sama,\n");
       printf("Mereka cukup berteman saja.\n");
     }
   } else {
-    printf("Jumlah kartu mereka tidak sama\n");
+    printf("Jumlah kartu mereka tidak sama,\n");
     printf("Pertemanan mereka tidak akan serasi.\n");
   }
 
