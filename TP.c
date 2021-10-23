@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(int argc, char const *argv[]) {
-  int n1, n2;
-  static int nemu = 0;
+  int n1, n2, i;
+  int nemu = 0;
 
   scanf("%d", &n1);
   char x[n1];
@@ -26,8 +26,8 @@ int main(int argc, char const *argv[]) {
         res = res - 9;
       }
 
-      if (res == y[i]) {
-        nemu = 1;
+      if (res == y[0]) {
+        nemu++;
       }
     }
 
