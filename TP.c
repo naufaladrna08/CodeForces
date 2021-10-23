@@ -1,17 +1,8 @@
 #include <stdio.h>
 
-int to_int(char x) {
-  int res = (int) x - 64;
-  
-  if (res > 9) {
-    res = res - 9;
-  }
-
-  return res;
-}
-
 int main(int argc, char const *argv[]) {
   int n1, n2;
+  static int nemu = 0;
 
   scanf("%d", &n1);
   char x[n1];
@@ -21,37 +12,39 @@ int main(int argc, char const *argv[]) {
   }
 
   scanf("%d", &n2);
-  char y[n2];
+  int y[n2];
 
   for (int i = 0; i < n2; i++) {
-    scanf(" %c", &y[i]);
+    scanf(" %d", &y[i]);
   }
-
-  int nemu = 0;
-  for (int i = 0; i < n1; i++) {
-    if (to_int(x[i]) == y[i]) {
-      nemu = 1;
-    } else {
-      nemu = 0;
-    }
-  }
-
-  for (int i = 0; i < n1; i++) {
-    printf("%c %c ", x[i], y[i]);
-  }
-
-  printf("\n");
 
   if (n1 == n2) {
-    printf("Nilai kartu mereka sama.\n");
-  } else {
-    printf("Nilai kartu mereka tidak sama.\n");
-  }
+    for (int i = 0; i < n1; i++) {
+      int res = (int) x[i] - 64;
+    
+      if (res > 9) {
+        res = res - 9;
+      }
 
-  if (nemu) {
-    printf("Ada rasa suka di antara mereka.\n");
+      if (res == y[i]) {
+        nemu = 1;
+      }
+    }
+
+    for (int i = 0; i < n1; i++) {
+      printf("%c %d ", x[i], y[i]);
+    }
+
+    if (nemu == 1) {
+      printf("\nNilai kartu mereka sama.\n");
+      printf("Ada rasa suka di antara mereka.\n");
+    } else {
+      printf("\nNilai kartu mereka tidak sama.\n");
+      printf("Mereka cukup berteman saja.\n");
+    }
   } else {
-    printf("Mereka cukup berteman saja.\n");
+    printf("Jumlah kartu mereka tidak sama\n");
+    printf("Pertemanan mereka tidak akan serasi.\n");
   }
 
   return 0;
